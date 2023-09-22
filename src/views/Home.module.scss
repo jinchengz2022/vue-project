@@ -1,0 +1,57 @@
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 100vh;
+
+  background-image: linear-gradient(to bottom, #5d33b3, #8f4cd7);
+
+  > header {
+    display: flex;
+    flex-shrink: 0;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    padding-top: 66px;
+    color: #d4d4ee;
+  }
+
+  > main {
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+
+    width: 96vw;
+
+    background-color: #fff;
+    border-radius: 4px;
+
+    /*
+  进入和离开动画可以使用不同
+  持续时间和速度曲线。
+*/
+    .enterActiveClass,
+    .leaveActiveClass {
+      transition: all 1.5s ease-out;
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    .enterFromClass {
+      transform: translateX(100vw);
+    }
+
+    .leaveToClass {
+      transform: translateX(-100vw);
+      opacity: 0;
+    }
+  }
+}
