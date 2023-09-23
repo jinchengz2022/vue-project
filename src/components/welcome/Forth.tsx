@@ -1,6 +1,4 @@
 import { defineComponent } from 'vue'
-import { RouterLink } from 'vue-router'
-
 import { Content } from './Content'
 
 import s from './Footer.module.scss'
@@ -13,7 +11,7 @@ export const Forth = defineComponent({
     };
 
     return () => (
-      <div class={s.wrapper} style={{ backgroundColor: 'orange'}}>
+      <div class={s.wrapper} style={{ backgroundColor: 'orange'}} >
         <Content v-slots={slots}/>
       </div>
     )

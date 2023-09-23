@@ -1,7 +1,7 @@
 import { defineComponent } from 'vue'
-import { RouterLink } from 'vue-router'
 
 import { Content } from './Content'
+import { Button } from '../../shared/MyButton'
 
 import s from './Footer.module.scss'
 
@@ -9,13 +9,14 @@ export const First = defineComponent({
   setup: (props, context) => {
     const slots = {
       logo: () => <p>logo1 ~</p>,
-      content: () => <p>conntent1 ~</p>,
+      content: () => <p>conntent1 ~</p>
     }
 
     return () => (
-      <main class={s.wrapper}>
+      <div class={s.wrapper} style={{ backgroundColor: 'white' }}>
         <Content v-slots={slots} />
-      </main>
+        <Button>test</Button>
+      </div>
     )
   }
 })

@@ -11,6 +11,7 @@ const router = createRouter({
   routes: [
     {
       path: '/',
+      name: 'direct_home',
       redirect: '/home'
     },
     {
@@ -20,6 +21,7 @@ const router = createRouter({
       children: [
         {
           path: '',
+          name: 'direct_first',
           redirect: '/home/first'
         },
         {
@@ -41,9 +43,14 @@ const router = createRouter({
           path: 'forth',
           name: 'forth',
           components: { content: Forth, footerContainer: Footer }
-        }
+        },
+        {
+          path: 'done',
+          name: 'done'
+        },
       ]
-    }
+    },
+    
   ]
 })
 

@@ -3,10 +3,10 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
+
   height: 100vh;
-
-  background-image: linear-gradient(to bottom, #5d33b3, #8f4cd7);
-
+  background: linear-gradient(to bottom, #EF629F, #EECDA3); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  
   > header {
     display: flex;
     flex-shrink: 0;
@@ -26,15 +26,10 @@
     align-items: center;
     overflow: hidden;
 
+    position: relative;
     width: 96vw;
-
-    background-color: #fff;
     border-radius: 4px;
 
-    /*
-  进入和离开动画可以使用不同
-  持续时间和速度曲线。
-*/
     .enterActiveClass,
     .leaveActiveClass {
       transition: all 1.5s ease-out;

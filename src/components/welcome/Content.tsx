@@ -5,10 +5,10 @@ export const Content = defineComponent({
     const { slots } = context
 
     return () => (
-      <div >
-        {slots.logo?.()}
-        {slots.content?.()}
-        {/* {slots.footerContainer?.()} */}
+      <div style={{ display: 'block'}}>
+        
+        <p>{slots.logo?.()}</p>
+        <p>{slots.content?.()}</p>
       </div>
     )
   }
