@@ -6,6 +6,8 @@ import { useSwipe } from './../hooks/useSwipe'
 import { urlMap } from './../common/routerMap'
 import { throttle } from './../common/throttle'
 import { FooterButton } from './../shared/FooterButton'
+import { NavBar } from './../shared/NavBar'
+import { Icon } from './../shared/Icon'
 
 import s from './Home.module.scss'
 
@@ -28,6 +30,7 @@ export const HomeView = defineComponent({
 
     return () => (
       <div class={s.wrapper}>
+        
         <header>
           <Header />
         </header>
@@ -44,13 +47,13 @@ export const HomeView = defineComponent({
               </Transition>
             )}
           </RouterView>
+          <FooterButton
+            onClick={(e) => {
+              console.log('wefsdf')
+            }}
+          />
         </main>
         <RouterView name="footerContainer" />
-        <FooterButton
-          onClick={(e) => {
-            console.log('wefsdf')
-          }}
-        />
       </div>
     )
   }

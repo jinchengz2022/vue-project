@@ -1,0 +1,22 @@
+.tabs {
+  > nav {
+    display: inline-flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: row;
+
+    width: 100%;
+
+    > ol {
+      width: 100%;
+      padding: 12px 0;
+      text-align: center;
+      border-bottom: 2px solid #fff;
+    }
+
+    .tabs_tab {
+      transition: all 0.5s linear;
+      border-bottom: 2px solid red;
+    }
+  }
+}

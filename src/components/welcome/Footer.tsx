@@ -15,7 +15,7 @@ export const Footer = defineComponent(() => {
             done
           </RouterLink>
           <RouterLink to={`/home/${urlMap[name]}`}>next</RouterLink>
-          <RouterLink to={'/home/done'}>done</RouterLink>
+          <RouterLink to={'/initial'}>done</RouterLink>
         </footer>
       )
     )

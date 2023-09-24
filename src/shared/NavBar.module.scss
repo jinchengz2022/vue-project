@@ -1,0 +1,17 @@
+.navbar {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+
+  width: 100vw;
+  height: 48px;
+  background: #ef629f;
+
+  .svg_icon {
+    > svg {
+      width: 24px;
+      height: 24px;
+      margin: 0 16px 0 8px;
+    }
+  }
+}

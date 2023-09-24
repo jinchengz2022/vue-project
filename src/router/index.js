@@ -5,6 +5,7 @@ import { Second } from '../components/welcome/Second'
 import { Third } from '../components/welcome/Third'
 import { Forth } from '../components/welcome/Forth'
 import { Footer } from '../components/welcome/Footer'
+import { InitialPage } from '../views/InitialPage'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -44,13 +45,14 @@ const router = createRouter({
           name: 'forth',
           components: { content: Forth, footerContainer: Footer }
         },
-        {
-          path: 'done',
-          name: 'done'
-        },
+        
       ]
     },
-    
+    {
+      path: '/initial',
+      name: 'initial',
+      component: InitialPage,
+    },
   ]
 })
 
