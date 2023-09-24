@@ -11,7 +11,7 @@ export const InitialPage = defineComponent({
       type: Object as PropType<HTMLAttributes['style']>
     }
   },
-  setup: (props, context) => {
+  setup: () => {
     const open = ref(false)
 
     return () => {
