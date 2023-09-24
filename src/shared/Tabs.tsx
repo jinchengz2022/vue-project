@@ -9,6 +9,8 @@ const Tab = defineComponent({
     }
   },
   setup: (props, context) => {
+    console.log(context)
+
     return () => <div class={s.tabs}>{context?.slots.default?.()}</div>
   }
 })
@@ -28,9 +30,9 @@ const Tabs = defineComponent({
   setup: (props, context) => {
     const { styles, defaultName, tabsChange } = props
     const { slots } = context
-    const tabChildren: Record<string, any>[] = slots.default?.() ?? [];
-    const itemName = ref(defaultName ?? tabChildren[0]?.props?.name);
-    
+    const tabChildren: Record<string, any>[] = slots.default?.() ?? []
+    const itemName = ref(defaultName ?? tabChildren[0]?.props?.name)
+
     if (tabChildren.length === 0) {
       return console.warn('<Tabs> need one child')
     }
@@ -44,11 +46,11 @@ const Tabs = defineComponent({
         console.warn('<Tab> need one name~')
       }
     }
+    console.log(tabChildren)
+
     return () => {
-      
-  
       const updateItem = (name: string) => {
-        itemName.value = name;
+        itemName.value = name
         tabsChange?.(name)
       }
 
@@ -59,17 +61,19 @@ const Tabs = defineComponent({
               <ol
                 class={itemName.value === ele?.props?.name ? s['tabs_tab'] : ''}
                 onClick={() => updateItem(ele?.props?.name)}
+                onTouchstart={() => updateItem(ele?.props?.name)}
               >
-                {ele?.props?.name}
+                <span>{ele?.props?.name}</span>
               </ol>
             ))}
           </nav>
+          <div class={s['tab_content']}>
+            {tabChildren.find((ele) => itemName.value === ele?.props?.name)?.children.default()}
+          </div>
         </div>
       )
     }
   }
 })
 
-Tabs.Tab = Tab
-
-export { Tabs }
+export { Tabs, Tab }

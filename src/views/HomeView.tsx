@@ -6,8 +6,7 @@ import { useSwipe } from './../hooks/useSwipe'
 import { urlMap } from './../common/routerMap'
 import { throttle } from './../common/throttle'
 import { FooterButton } from './../shared/FooterButton'
-import { NavBar } from './../shared/NavBar'
-import { Icon } from './../shared/Icon'
+import { InitialPage } from './InitialPage'
 
 import s from './Home.module.scss'
 
@@ -28,14 +27,27 @@ export const HomeView = defineComponent({
       }
     })
 
+    function currying(fn) {
+      let args = []
+      return function temp(...newArgs) {
+        if (newArgs.length) {
+          args = [...args, ...newArgs]
+          return temp
+        } else {
+          let val = fn.apply(this, args)
+          args = [] //保证再次调用时清空
+          return val
+        }
+      }
+    }
+
     return () => (
       <div class={s.wrapper}>
-        
         <header>
           <Header />
         </header>
         <main ref={mainRef}>
-          <RouterView name="content">
+          {/* <RouterView name="content">
             {({ Component }) => (
               <Transition
                 enterActiveClass={s.enterActiveClass}
@@ -46,7 +58,8 @@ export const HomeView = defineComponent({
                 <Component />
               </Transition>
             )}
-          </RouterView>
+          </RouterView> */}
+          <InitialPage />
           <FooterButton
             onClick={(e) => {
               console.log('wefsdf')

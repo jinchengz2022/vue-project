@@ -3,9 +3,7 @@ import { defineComponent, HTMLAttributes, ref, type PropType } from 'vue'
 import { OverLay } from './../shared/OverLay'
 import { NavBar } from './../shared/NavBar'
 import { Icon } from './../shared/Icon'
-import { Tabs } from './../shared/Tabs'
-
-const { Tab } = Tabs
+import { Tabs, Tab } from './../shared/Tabs'
 
 export const InitialPage = defineComponent({
   props: {
@@ -15,7 +13,7 @@ export const InitialPage = defineComponent({
   },
   setup: (props, context) => {
     const open = ref(false)
-    
+
     return () => {
       const closeOverLay = () => {
         open.value = false
@@ -26,13 +24,12 @@ export const InitialPage = defineComponent({
       }
 
       const tabsChange = (n) => {
-        console.log(n);
-        
+        console.log(n)
       }
 
       return (
-        <div>
-          <NavBar>
+        <div style={{ width: '100%', height: '100%'}}>
+          {/* <NavBar>
             {{
               icon: () => (
                 <Icon onClick={openOverLay}>
@@ -55,10 +52,14 @@ export const InitialPage = defineComponent({
               ),
               text: () => 'base'
             }}
-          </NavBar>
-          <Tabs defaultName='item1' tabsChange={tabsChange}>
-            <Tab name="item1">item1</Tab>
-            <Tab name="item2">item1</Tab>
+          </NavBar> */}
+          <Tabs defaultName="item1" tabsChange={tabsChange}>
+            <Tab name="item1">
+              <p>create</p>
+            </Tab>
+            <Tab name="item2">
+              <p>list</p>
+            </Tab>
           </Tabs>
           {open.value ? (
             <OverLay onClick={closeOverLay}>
