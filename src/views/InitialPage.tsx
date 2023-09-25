@@ -3,6 +3,7 @@ import { defineComponent, HTMLAttributes, ref, type PropType } from 'vue'
 import { OverLay } from './../shared/OverLay'
 import { NavBar } from './../shared/NavBar'
 import { Icon } from './../shared/Icon'
+import { ComputedPad } from '../shared/ComputedPad'
 import { Tabs, Tab } from './../shared/Tabs'
 
 export const InitialPage = defineComponent({
@@ -11,7 +12,7 @@ export const InitialPage = defineComponent({
       type: Object as PropType<HTMLAttributes['style']>
     }
   },
-  setup: (props, context) => {
+  setup: () => {
     const open = ref(false)
 
     return () => {
@@ -28,7 +29,7 @@ export const InitialPage = defineComponent({
       }
 
       return (
-        <div style={{ width: '100%', height: '100%'}}>
+        <div style={{ width: '100%', height: '100%' }}>
           {/* <NavBar>
             {{
               icon: () => (
@@ -56,6 +57,7 @@ export const InitialPage = defineComponent({
           <Tabs defaultName="item1" tabsChange={tabsChange}>
             <Tab name="item1">
               <p>create</p>
+              <ComputedPad />
             </Tab>
             <Tab name="item2">
               <p>list</p>
