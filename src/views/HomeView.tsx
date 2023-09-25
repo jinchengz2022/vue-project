@@ -7,6 +7,7 @@ import { urlMap } from './../common/routerMap'
 import { throttle } from './../common/throttle'
 import { FooterButton } from './../shared/FooterButton'
 import { InitialPage } from './InitialPage'
+import { ComputedPad } from '../shared/ComputedPad'
 
 import s from './Home.module.scss'
 
@@ -45,7 +46,8 @@ export const HomeView = defineComponent({
               </Transition>
             )}
           </RouterView> */}
-          <InitialPage />
+          <ComputedPad/>
+          {/* <InitialPage />  */}
           <FooterButton
             onClick={(e) => {
               console.log('wefsdf')

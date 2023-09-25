@@ -46,7 +46,6 @@ const Tabs = defineComponent({
         console.warn('<Tab> need one name~')
       }
     }
-    console.log(tabChildren)
 
     return () => {
       const updateItem = (name: string) => {
